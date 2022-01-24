@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transfer</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    // Sử dụng DNS Prefetch-->
+<link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
+<link rel="stylesheet" href="texxt.css">
+<script src="https://kit.fontawesome.com/5790b5cbe2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="table-title mb-4">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Transfer money Information</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a href="/customers" class="btn btn-outline-light"><i class="fa fa-list" aria-hidden="true"></i> <span>Customer list</span></a>
+                </div>
+            </div>
+        </div>
+        <form id="frmTransfer" method="post">
+            <fieldset class="row g-3">
+                <div class="form-group row">
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Sender ID</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" readonly id="senderId" name="senderId" value="235">
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Sender Name</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" readonly id="senderName" name="senderName" value="Velma Vazquez">
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Email</label>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" readonly id="email" name="email" value="nuwahe@mailinator.com">
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Sender balance</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" readonly id="balance" name="balance" value="657">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    <div class="mb-3 col-md-3">
+                        <label for="recipient_id" class="col-sm-12 col-form-label">Recipient Name</label>
+                        <div class="col-sm-12">
+                            <select id="recipient_id" class="form-select" name="recipientId">
+                                <option value="245">(245) Hammett Morrow</option>
+                                <option value="255">(255) Ulric Singleton</option>
+                                <option value="265">(265) Lilah Small</option>
+                                <option value="275">(275) Latifah Stokes</option>
+                                <option value="285">(285) Amy Shepherd</option>
+                                <option value="295">(295) Mara Acevedo</option>
+                                <option value="305">(305) Yuli Mcmillan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Transfer Amount ($)</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" id="transferAmount" name="transferAmount" value="">
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Fees (%)</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" value="10" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label class="col-sm-12 col-form-label">Total amount of transaction ($)</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" readonly id="transactionAmount" name="transactionAmount" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="mb-3 col-md-12">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class="fa fa-exchange" aria-hidden="true"></i>
+                                 Transfer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- <div class="footer">
+        <div id="message-alert">
+            
+            
+            <div class="alert-danger hide">
+                <h5>Please correct errors below:</h5>
+            </div>
+            
+        </div>
+    </div> -->
+
+    
+    <script type="text/javascript" src="/resources/js/custom-validation.js"></script>
+    <script type="text/javascript" src="/resources/js/app.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#transferAmount").on("change", function () {
+                let transferAmount = $(this).val();
+                let fees = 10;
+                let feeAmount = transferAmount * fees / 100;
+                let transactionAmount = parseInt(transferAmount) + feeAmount;
+                $("#transactionAmount").val(transactionAmount);
+            });
+        });
+    </script>
+
+</body>
+</html>

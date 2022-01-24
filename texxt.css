@@ -1,0 +1,36 @@
+.table-title{
+    background-color: #299be4;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+   
+}
+/* .col-sm-6 a{
+    float: right;
+    margin-right: 20px;
+    
+}
+
+.col-sm-6{
+padding: 7px;
+float: left;
+}
+.row{
+    margin: 0px;
+    padding: 0px;
+} */ 
+ .table-title .btn {
+    float: right;
+    min-width: 50px;
+    outline: none !important;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+form label{
+    font-weight: bold;
+}
+table th{
+    background-color: #4CAF50 !important;
+    color: #fff;
+}
+
